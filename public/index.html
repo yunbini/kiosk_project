@@ -10,34 +10,95 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link rel="stylesheet" href="App.css">
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <nav class="nav_top">
+      <div class="nav_logo">
+          <img src="smu_logo.png" alt="스마트정보통신공학과 로고">
+          <a href="">스마트정보통신공학과</a>
+      </div>
+      
+      <p>주문 번호: 1번</p>
+  </nav>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <ul class="menu_bar">
+      <li id="mainmenu" class="menu_item">메인 메뉴</li>
+      <li id="drink" class="menu_item">음료</li>
+      <li id="sidemenu" class="menu_item">사이드</li>
+  </ul>
+  
+  <ul class="mainmenu_1">
+      <li>
+          <img src="계란말이.jpeg">
+          <p class="menuName1">계란말이</p>
+          <p>10000원</p>
+      </li>
+      <li>
+          <img src="계란말이.jpeg">
+          <p class="menuName1">계란말이</p>
+          <p>10000원</p>
+      </li>
+      <li>
+          <img src="계란말이.jpeg">
+          <p class="menuName1">계란말이</p>
+          <p>10000원</p>
+      </li>
+  </ul>
+  <ul class="mainmenu_2">
+      <li>
+          <img src="계란말이.jpeg">
+          <p class="menuName2">계란말이</p>
+          <p>10000원</p>
+      </li>
+      <li>
+          <img src="계란말이.jpeg">
+          <p class="menuName2">계란말이</p>
+          <p>10000원</p>
+      </li>
+      <li>
+          <img src="계란말이.jpeg">
+          <p class="menuName2">계란말이</p>
+          <p>10000원</p>
+      </li>
+  </ul>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+  <div class="checked_menu_line"> 
+      <p>선택한 메뉴</p>
+  </div>
+
+  <div>
+      <ul class="checked_menu_bar">
+          <li>
+              <img src="계란말이.jpeg">
+              <button id="cancel_btn">X</button>
+              <p id="amount_btn">
+              <button>-</button>
+              <span> 2 </span>
+              <button>+</button>
+              </p>
+          </li>
+      </ul>
+  </div>
+  
+  <div class="order_line">
+      <p id="order_amount">
+          <span>주문 수량</span>
+          <span>1</span>
+      </p>
+      <p id="order_price">
+          <span>주문 금액</span>
+          <span>20,000원</span>
+      </p>
+  </div>
+
+  <div class="bottom_line">
+      <button id="all_cancel_btn">전체 취소</button>
+      <button id="payment_btn">결제 하기</button>
+  </div>
   </body>
 </html>
