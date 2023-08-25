@@ -6,6 +6,7 @@ body{
   justify-content:space-between;
   align-items: center;
   font-weight: bold;
+  margin-top: 10px;
 }
 .nav_logo{
   align-items:center;
@@ -51,8 +52,8 @@ ul{
 
 #mainmenu{
   margin:5px 2px 5px 5px;
-  background-color:#044287;
-  color:white;
+  /*background-color:#044287;
+  color:white;*/
 }
 #drink{
   margin:5px 2px 5px 2px;
@@ -82,7 +83,7 @@ ul{
 
 .mainmenu_1 li{
   width:150px;
-  height:180px;
+  height:190px;
   display:inline;
   padding-top:10px;
   margin:5px 2px;
@@ -94,9 +95,9 @@ ul{
 }
 .mainmenu_2 li{
   width:150px;
-  height:200px;
+  height:190px;
   display:inline;
-  padding-top:20px;
+  padding-top:10px;
   margin:5px 2px;
   border-radius:10px;
 
@@ -123,6 +124,7 @@ ul{
   display:flex;
   align-items: center;
   justify-content: center;
+  margin:10px;
   font-weight:bold;
 }
 .checked_menu_line{
@@ -148,7 +150,7 @@ ul{
   margin:5px 10px;
   border-radius: 10px;
   padding-bottom:5px;
-  display:inline;
+  display:none;
 }
 .checked_menu_bar img{
   height:70px; width:70px;
