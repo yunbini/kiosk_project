@@ -62,7 +62,7 @@ ul{
   margin:5px 5px 5px 2px;
 }
 
-.mainmenu_1{
+.menu_1{
   list-style: none;
   padding:0;
   display:flex;
@@ -71,7 +71,7 @@ ul{
 
   text-align:center;
 }
-.mainmenu_2{
+.menu_2{
   list-style: none;
   padding:0;
   display:flex;
@@ -81,7 +81,7 @@ ul{
   text-align:center;
 }
 
-.mainmenu_1 li{
+.menu_1 li{
   width:150px;
   height:190px;
   display:inline;
@@ -93,7 +93,7 @@ ul{
 
   border:2px solid lightgray;
 }
-.mainmenu_2 li{
+.menu_2 li{
   width:150px;
   height:190px;
   display:inline;
@@ -106,21 +106,21 @@ ul{
   border:2px solid lightgray;
 }
 
-.mainmenu_1 img{
+.menu_1 img{
   width:100px; height:100px;
 }
-.mainmenu_2 img{
+.menu_2 img{
   width:100px; height:100px;
 }
 
-.mainmenu_1 p{
+.menu_1 p{
   display:flex;
   align-items: center;
   justify-content: center;
   margin:10px;
   font-weight:bold;
 }
-.mainmenu_2 p{
+.menu_2 p{
   display:flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@ ul{
 .checked_menu_line{
   background-color: #E7E6E6;
   color:gray;
-  font-weight: bold;
+  font-weight: bold;                                  
 }
 .checked_menu_line p{
   padding:3px 0px 3px 10px;
@@ -143,6 +143,7 @@ ul{
   padding:0;
   width:390px;
   height:134.33px;
+  box-sizing:border-box;
 }
 
 .checked_menu_bar li{
@@ -150,7 +151,7 @@ ul{
   margin:5px 10px;
   border-radius: 10px;
   padding-bottom:5px;
-  display:none;
+  display:flex;
 }
 .checked_menu_bar img{
   height:70px; width:70px;
