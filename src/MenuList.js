@@ -10,7 +10,7 @@ function Menu({checkedmenu,onRemove}){
             
         <li style={{display:'block'}}>
             <img src={checkedmenu.menuImage}></img>
-            <button id="cancel_btn" onClick={()=>onRemove(checkedmenu.id)}>X</button>
+            <button className="cancel_btn" onClick={()=>onRemove(checkedmenu.id)}>X</button>
             <p id="amount_btn">
             <button onClick = {()=>{
                 if(menuAmount <= 1)

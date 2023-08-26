@@ -144,6 +144,8 @@ ul{
   width:390px;
   height:134.33px;
   box-sizing:border-box;
+
+  overflow:scroll;
 }
 
 .checked_menu_bar li{
@@ -152,43 +154,44 @@ ul{
   border-radius: 10px;
   padding-bottom:5px;
   display:flex;
+  
+  width:90px;
+  height:115px;
 }
 .checked_menu_bar img{
   height:70px; width:70px;
   margin:10px 10px 0px 10px;
 }
-.checked_menu_bar p{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  margin:5px 0px;
-}
 .checked_menu_bar span{
   padding: 0px 8px;
 }
-.checked_menu_bar button{
+.cancel_btn{
+  background-color:red;
+  color:white;
+  font-weight: bold;
+  border:1px solid black;
+  border-radius:50%;
+
+  position:relative;
+  left:78px; bottom:91px;
+}
+
+#amount_btn{
+  display:flex;
+  width:90px; height:21.33px;
+  align-items: center;
+  justify-content: center;
+  margin:5px 0px;
+
+  position:relative;
+  bottom:20px;
+}
+#amount_btn button{
+  width:22.46px; height:20px;
   font-weight: bold;
   color:gray;
   border:1.5px solid rgb(23,44,81);
   border-radius:3px;
-}
-#cancel_btn{
-  background-color:red;
-  color:white;
-  font-weight: bold;
-  border-radius:50%;
-
-  position:absolute;
-  left:85px;
-  top:600px;
-}
-#amount_btn{
-  display:flex;
-  width:90px; height:21.33px;
-  margin:5px 0px 5px 0px;
-}
-#amount_btn button{
-  width:22.46px; height:20px;
 }
 .order_line{
   display:flex;

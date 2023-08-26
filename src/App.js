@@ -4,7 +4,8 @@ import MenuList from './MenuList';
 import { useState, useRef } from 'react';
 
 function App() {
-
+    const [orderAmount,setorderAmount] = useState(0);
+    
    const [checkedMenus,setCheckedMenus] = useState([
     
    ]); // 선택된 메뉴들이 저장되는 배열
@@ -20,10 +21,12 @@ function App() {
    }
    setCheckedMenus([...checkedMenus,checkedmenu])
    nextId.current += 1;
+   setorderAmount(orderAmount+1);
    }
 
    const onRemove = id =>{
     setCheckedMenus(checkedMenus.filter(checkedmenu => checkedmenu.id !== id));
+    setorderAmount(orderAmount-1);
    }
 
   return (
@@ -52,7 +55,7 @@ function App() {
   <div className="order_line">
       <p id="order_amount">
           <span>주문 수량</span>
-          <span>1</span>
+          <span>{orderAmount}</span>
       </p>
       <p id="order_price">
           <span>주문 금액</span>
