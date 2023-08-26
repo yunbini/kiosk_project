@@ -1,25 +1,16 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 
-function Menu({checkedmenu}){
+function Menu({checkedmenu,onRemove}){
     let [menuAmount,setMenuAmount] = useState(1);
     //각 메뉴 개수 +,-
     // 1 이하로는 안내려갑니다.
-  const[Displayed,setDisplayed] = useState(true);
-     const cancelDisplay = () =>{
-        setDisplayed(false);
-     }
-     const cancelStyle = {
-      display: Displayed ? 'block':'none' 
-     }
-     // 선택된 메뉴에서 빨간 x 버튼 누르면 사라지는겁니다.
-
 
     return(
             
-        <li style={cancelStyle}>
+        <li style={{display:'block'}}>
             <img src={checkedmenu.menuImage}></img>
-            <button id="cancel_btn" onClick={cancelDisplay}>X</button>
+            <button id="cancel_btn" onClick={()=>onRemove(checkedmenu.id)}>X</button>
             <p id="amount_btn">
             <button onClick = {()=>{
                 if(menuAmount <= 1)
@@ -37,7 +28,7 @@ function Menu({checkedmenu}){
     );
 }
 
-function MenuList({checkedMenus}){
+function MenuList({checkedMenus,onRemove}){
 
     if (checkedMenus.length === 0) {
         return (
@@ -51,7 +42,7 @@ function MenuList({checkedMenus}){
             
                 <ul className="checked_menu_bar">
                     {checkedMenus.map(checkedmenu =>(
-                        <Menu checkedmenu={checkedmenu} key={checkedmenu.id}/>
+                        <Menu checkedmenu={checkedmenu} key={checkedmenu.id} onRemove={onRemove}/>
                     ))}
                 </ul>
             

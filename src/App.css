@@ -182,6 +182,14 @@ ul{
   left:85px;
   top:600px;
 }
+#amount_btn{
+  display:flex;
+  width:90px; height:21.33px;
+  margin:5px 0px 5px 0px;
+}
+#amount_btn button{
+  width:22.46px; height:20px;
+}
 .order_line{
   display:flex;
 }

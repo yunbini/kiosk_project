@@ -22,6 +22,10 @@ function App() {
    nextId.current += 1;
    }
 
+   const onRemove = id =>{
+    setCheckedMenus(checkedMenus.filter(checkedmenu => checkedmenu.id !== id));
+   }
+
   return (
     <>
     <nav className="nav_top">
@@ -42,7 +46,7 @@ function App() {
       <p>선택한 메뉴</p>
   </div>
 
-  <MenuList checkedMenus={checkedMenus} />
+  <MenuList checkedMenus={checkedMenus} onRemove={onRemove} />
   
   
   <div className="order_line">
