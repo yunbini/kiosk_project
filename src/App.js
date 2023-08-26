@@ -4,8 +4,10 @@ import MenuList from './MenuList';
 import { useState, useRef } from 'react';
 
 function App() {
-    const [orderAmount,setorderAmount] = useState(0);
-    
+    const [orderAmount,setOrderAmount] = useState(0);
+
+    const[orderPrice,setOrderPrice] = useState(0);
+
    const [checkedMenus,setCheckedMenus] = useState([
     
    ]); // 선택된 메뉴들이 저장되는 배열
@@ -21,12 +23,13 @@ function App() {
    }
    setCheckedMenus([...checkedMenus,checkedmenu])
    nextId.current += 1;
-   setorderAmount(orderAmount+1);
+   setOrderAmount(orderAmount+1);
+   setOrderPrice(parseInt(orderPrice) + parseInt(menuPrice));
    }
 
    const onRemove = id =>{
     setCheckedMenus(checkedMenus.filter(checkedmenu => checkedmenu.id !== id));
-    setorderAmount(orderAmount-1);
+    setOrderAmount(orderAmount-1);
    }
 
   return (
@@ -59,13 +62,17 @@ function App() {
       </p>
       <p id="order_price">
           <span>주문 금액</span>
-          <span>20,000원</span>
+          <span>{orderPrice} 원</span>
       </p>
 
   </div>
 
   <div className="bottom_line">
-      <button id="all_cancel_btn">전체 취소</button>
+      <button id="all_cancel_btn" onClick={()=>{
+        checkedMenus.splice(0,checkedMenus.length);
+        setOrderAmount(0);
+        setOrderPrice(0);
+      }}>전체 취소</button>
       <button id="payment_btn">결제 하기</button>
   </div>
   </>
