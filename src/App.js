@@ -27,11 +27,16 @@ function App() {
    setOrderPrice(parseInt(orderPrice) + parseInt(menuPrice));
    }
 
-   const onRemove = id =>{
+   const onRemove = (id,menuPrice) =>{
+    const checkedmenu = {
+        menuPrice
+   }
+    nextId.current -= 1;
     setCheckedMenus(checkedMenus.filter(checkedmenu => checkedmenu.id !== id));
     setOrderAmount(orderAmount-1);
+    setOrderPrice(parseInt(orderPrice) - parseInt(menuPrice));
    }
-
+ 
   return (
     <>
     <nav className="nav_top">
@@ -46,6 +51,7 @@ function App() {
   <Menu
    checkedMenus={checkedMenus}
    onCreate={onCreate}
+   onRemove={onRemove}
  />
 
   <div className="checked_menu_line"> 
