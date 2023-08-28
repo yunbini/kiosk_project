@@ -1,6 +1,4 @@
-body{
-  margin:0;
-}
+
 .nav_top {
   display:flex;
   justify-content:space-between;
@@ -13,8 +11,8 @@ body{
   display:flex;
 }
 .nav_top img{
-  width:70px; height:70px;
-  /*padding: 10px 0px 10px 12px;*/
+  width:50px; height:50px;
+  margin: 0px 10px; 
 }
 .nav_top a{
   text-decoration:none;
@@ -141,7 +139,7 @@ ul{
   display:flex;
   list-style: none;
   padding:0;
-  width:390px;
+  width:100%;
   height:134.33px;
   box-sizing:border-box;
 
@@ -248,4 +246,141 @@ ul{
 .active {
   background-color: #044287;
   color:white;
+}
+
+
+/*반응형 css*/
+@media screen and (max-width:340px){
+  .nav_top a{
+    text-decoration:none;
+    color:black;
+    font-size:14px;
+    
+  }
+  .nav_top p{
+    font-size:14px;
+    padding-right:8px;
+  }
+  .menu_bar li{
+    font-size:14px;
+  }
+  .menu_1 img{
+    width:80px; height:80px;
+  }
+  .menu_2 img{
+    width:80px; height:80px;
+  }
+  .menu_1 li{
+    width:145px;
+    height:170px;
+    margin:5px 3px;
+  }
+  .menu_2 li{
+    width:145px;
+    height:170px;
+    margin:5px 3px;
+  }
+  .menu_1 p{
+    font-size:14px;
+  }
+  .menu_2 p{
+    font-size:14px;
+  }
+  .checked_menu_line p{
+    font-size:14px;
+  }
+  .order_line span{
+    font-size:14px;
+  }
+  .bottom_line button{
+    width:130px;
+  }
+  
+}
+@media screen and (max-width:310px){
+  .nav_top a{
+    text-decoration:none;
+    color:black;
+    font-size:12px;
+    
+  }
+  .nav_top p{
+    font-size:12px;
+    padding-right:8px;
+  }
+  .nav_top img{
+    width:40px; height:40px;
+    margin: 0px 10px; 
+  }
+  .menu_bar li{
+    font-size:13px;
+  }
+  .menu_1 img{
+    width:70px; height:70px;
+  }
+  .menu_2 img{
+    width:70px; height:70px;
+  }
+  .menu_1 li{
+    width:145px;
+    height:150px;
+    margin:5px 3px;
+  }
+  .menu_2 li{
+    width:145px;
+    height:150px;
+    margin:5px 3px;
+  }
+  .menu_1 p{
+    font-size:13px;
+  }
+  .menu_2 p{
+    font-size:12px;
+  }
+  .checked_menu_line p{
+    font-size:13px;
+  }
+  .order_line span{
+    font-size:12px;
+  }
+  .bottom_line button{
+    width:110px;
+  }
+  .checked_menu_bar{
+    height:126px;
+  }
+  
+  .checked_menu_bar li{
+    width:80px;
+    height:105px;
+  }
+  .checked_menu_bar img{
+    height:60px; width:60px;
+    margin:10px 10px 0px 10px;
+  }
+  .checked_menu_bar span{
+    padding: 0px 8px;
+  }
+  .cancel_btn{
+    left:70px; bottom:83px;
+  }
+  
+  #amount_btn{
+    display:flex;
+    width:90px; height:21px;
+    align-items: center;
+    justify-content: center;
+    margin:5px 0px;
+  
+    position:relative;
+    bottom:20px;
+    right:5px;
+  }
+  #amount_btn button{
+    width:21px; height:21px;
+    font-weight: bold;
+    color:gray;
+    border:1.5px solid rgb(23,44,81);
+    border-radius:3px;
+  }
 }

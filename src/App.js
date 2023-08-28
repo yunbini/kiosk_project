@@ -39,9 +39,10 @@ function App() {
  
   return (
     <>
+    
     <nav className="nav_top">
       <div className="nav_logo">
-          <img src="smu_logo.png" alt="스마트정보통신공학과 로고"></img>
+          <img src="logo.png" alt="스마트정보통신공학과 로고"></img>
           <a href="">스마트정보통신공학과</a>
       </div>
       
