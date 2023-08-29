@@ -50,7 +50,6 @@ function App() {
   </nav>
 
   <Menu
-   checkedMenus={checkedMenus}
    onCreate={onCreate}
    onRemove={onRemove}
  />

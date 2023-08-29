@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 
-function MenuItem({menuName,menuImage,menuPrice,onCreate,onRemove}){
+function MenuItem({menuName,menuImage,menuPrice,onCreate}){
     return(
         <li onClick={onCreate}>
             <img src={menuImage} alt={menuName}></img>
@@ -12,7 +12,7 @@ function MenuItem({menuName,menuImage,menuPrice,onCreate,onRemove}){
 }
 
 
-function Menu({checkedMenus,onCreate,onRemove}){
+function Menu({onCreate,onRemove}){
     let [menuName,setMenuName] = useState(['계란','계란말이','계란찜','계란볶음밥','계란후라이','삶은계란']);
   let [menuImage,setMenuImage] = useState(['계란.jpeg','계란말이.jpeg','계란찜.jpeg','계란볶음밥.jpeg','계란후라이.jpeg','삶은계란.jpeg']);
   let [menuPrice,setMenuPrice] = useState([100,2000,4000,5500,1500,1000])
