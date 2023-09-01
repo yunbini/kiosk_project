@@ -35,18 +35,21 @@ function App() {
     setOrderPrice(orderPrice - parseInt(menuPrice)*menuAmount);
    }
    
-   const handleAmount = (menuPrice) =>{
+   const Plus = (menuPrice) =>{
         setOrderPrice(orderPrice + parseInt(menuPrice));
    }
 
+   const Minus = (menuPrice) =>{
+        setOrderPrice(orderPrice + (-1)*parseInt(menuPrice));
+   }
   return (
     <>
-    
+
     <nav className="nav_top">
       <div className="nav_logo">
           <img src="logo.png" alt="스마트정보통신공학과 로고"></img>
           <a href="">스마트정보통신공학과</a>
-      </div>*
+      </div>
       
       <p>주문 번호: 1번</p>
   </nav>
@@ -60,7 +63,7 @@ function App() {
       <p>선택한 메뉴</p>
   </div>
  
-  <MenuList checkedMenus={checkedMenus} onRemove={onRemove} handleAmount={handleAmount}/>
+  <MenuList checkedMenus={checkedMenus} onRemove={onRemove} Plus={Plus} Minus={Minus}/>
   
   
   <div className="order_line">

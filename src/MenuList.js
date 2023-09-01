@@ -1,15 +1,11 @@
+import { toBeEmpty } from '@testing-library/jest-dom/matchers';
 import React from 'react';
 import { useState, useRef } from 'react';
 
-function Menu({checkedmenu,onRemove,menuPrice,handleAmount}){
+function Menu({checkedmenu,onRemove,menuPrice,Plus,Minus}){
     let [menuAmount,setMenuAmount] = useState(1);
     //각 메뉴 개수 +,-
     // 1 이하로는 안내려갑니다.
-
-    const onAmount = (amount,menuPrice) =>{
-            setMenuAmount(amount);
-            handleAmount(menuPrice);
-    };
 
     return( 
             
@@ -20,18 +16,20 @@ function Menu({checkedmenu,onRemove,menuPrice,handleAmount}){
             <button onClick = {()=>{
                 if(menuAmount <= 1)
                     setMenuAmount(1);
-                else
-                    onAmount(menuAmount - 1,menuPrice); 
+                else{
+                    setMenuAmount(menuAmount - 1);
+                    Minus(menuPrice)
+                }
                 }}>-</button> 
             <span> {menuAmount} </span>
-            <button onClick = {()=>onAmount(menuAmount + 1,menuPrice)}>+</button>
+            <button onClick = {()=>{setMenuAmount(menuAmount + 1); Plus(menuPrice)}}>+</button>
             </p>
         </li>
                 
     );
 }
 
-function MenuList({checkedMenus,onRemove,menuPrice,handleAmount}){
+function MenuList({checkedMenus,onRemove,menuPrice,Plus,Minus}){
 
     if (checkedMenus.length === 0) {
         return (
@@ -45,7 +43,7 @@ function MenuList({checkedMenus,onRemove,menuPrice,handleAmount}){
             
                 <ul className="checked_menu_bar">
                     {checkedMenus.map(checkedmenu =>(
-                        <Menu checkedmenu={checkedmenu} key={checkedmenu.id} onRemove={onRemove} menuPrice={checkedmenu.menuPrice} handleAmount={handleAmount}/>
+                        <Menu checkedmenu={checkedmenu} key={checkedmenu.id} onRemove={onRemove} menuPrice={checkedmenu.menuPrice} Plus={Plus} Minus={Minus}/>
                     ))}
                 </ul>
             
