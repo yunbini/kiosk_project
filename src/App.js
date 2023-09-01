@@ -24,19 +24,21 @@ function App() {
    setCheckedMenus([...checkedMenus,checkedmenu])
    nextId.current += 1;
    setOrderAmount(orderAmount+1);
-   setOrderPrice(parseInt(orderPrice) + parseInt(menuPrice));
+   setOrderPrice(parseInt(orderPrice)+parseInt(menuPrice));
    }
 
-   const onRemove = (id,menuPrice) =>{
-    const checkedmenu = {
-        menuPrice
-   }
+   const onRemove = (id,menuPrice,menuAmount) =>{
+    console.log(menuAmount);
     nextId.current -= 1;
     setCheckedMenus(checkedMenus.filter(checkedmenu => checkedmenu.id !== id));
     setOrderAmount(orderAmount-1);
-    setOrderPrice(parseInt(orderPrice) - parseInt(menuPrice));
+    setOrderPrice(orderPrice - parseInt(menuPrice)*menuAmount);
    }
- 
+   
+   const handleAmount = (menuPrice) =>{
+        setOrderPrice(orderPrice + parseInt(menuPrice));
+   }
+
   return (
     <>
     
@@ -44,7 +46,7 @@ function App() {
       <div className="nav_logo">
           <img src="logo.png" alt="스마트정보통신공학과 로고"></img>
           <a href="">스마트정보통신공학과</a>
-      </div>
+      </div>*
       
       <p>주문 번호: 1번</p>
   </nav>
@@ -57,8 +59,8 @@ function App() {
   <div className="checked_menu_line"> 
       <p>선택한 메뉴</p>
   </div>
-
-  <MenuList checkedMenus={checkedMenus} onRemove={onRemove} />
+ 
+  <MenuList checkedMenus={checkedMenus} onRemove={onRemove} handleAmount={handleAmount}/>
   
   
   <div className="order_line">

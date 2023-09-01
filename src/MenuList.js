@@ -1,34 +1,37 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 
-function Menu({checkedmenu,onRemove}){
+function Menu({checkedmenu,onRemove,menuPrice,handleAmount}){
     let [menuAmount,setMenuAmount] = useState(1);
     //각 메뉴 개수 +,-
     // 1 이하로는 안내려갑니다.
 
-    return(
+    const onAmount = (amount,menuPrice) =>{
+            setMenuAmount(amount);
+            handleAmount(menuPrice);
+    };
+
+    return( 
             
         <li style={{display:'block'}}>
-            <img src={checkedmenu.menuImage}></img>
-            <button className="cancel_btn" onClick={()=>onRemove(checkedmenu.id)}>X</button>
+            <img src={checkedmenu.menuImage} alt={checkedmenu.menuName}></img>
+            <button className="cancel_btn" onClick={()=>onRemove(checkedmenu.id,menuPrice,menuAmount)}>X</button>
             <p id="amount_btn">
             <button onClick = {()=>{
                 if(menuAmount <= 1)
                     setMenuAmount(1);
                 else
-                    setMenuAmount(menuAmount-1);
-            }}>-</button>
+                    onAmount(menuAmount - 1,menuPrice); 
+                }}>-</button> 
             <span> {menuAmount} </span>
-            <button onClick = {()=>{
-                setMenuAmount(menuAmount+1)
-            }}>+</button>
+            <button onClick = {()=>onAmount(menuAmount + 1,menuPrice)}>+</button>
             </p>
         </li>
                 
     );
 }
 
-function MenuList({checkedMenus,onRemove}){
+function MenuList({checkedMenus,onRemove,menuPrice,handleAmount}){
 
     if (checkedMenus.length === 0) {
         return (
@@ -42,7 +45,7 @@ function MenuList({checkedMenus,onRemove}){
             
                 <ul className="checked_menu_bar">
                     {checkedMenus.map(checkedmenu =>(
-                        <Menu checkedmenu={checkedmenu} key={checkedmenu.id} onRemove={onRemove}/>
+                        <Menu checkedmenu={checkedmenu} key={checkedmenu.id} onRemove={onRemove} menuPrice={checkedmenu.menuPrice} handleAmount={handleAmount}/>
                     ))}
                 </ul>
             
