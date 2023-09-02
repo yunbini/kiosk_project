@@ -71,7 +71,7 @@ function Menu({onCreate,onRemove}){
                         menuImage={item.menuImage}
                         menuPrice={item.menuPrice}
                         onCreate={() => onCreate(item.menuImage, item.menuName, item.menuPrice)}
-                        onRemove={() => onRemove(item.menuPrice)} />
+                        />
       ))}
   </ul>
   <ul className="menu_2">
@@ -81,7 +81,7 @@ function Menu({onCreate,onRemove}){
                         menuImage={item.menuImage}
                         menuPrice={item.menuPrice}
                         onCreate={() => onCreate(item.menuImage, item.menuName, item.menuPrice)}
-                        onRemove={() => onRemove(item.menuPrice)}/>
+                        />
         ))}
   </ul></div>
     )
